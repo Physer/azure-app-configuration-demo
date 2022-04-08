@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC", "src\MVC\MVC.csproj",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalAPIs", "src\MinimalAPIs\MinimalAPIs.csproj", "{CC53509D-3AA4-4126-8B69-53B25E951A89}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "src\Library\Library.csproj", "{DBA00A4F-3D23-4320-93BE-4F6D57CEFF0E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{CC53509D-3AA4-4126-8B69-53B25E951A89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC53509D-3AA4-4126-8B69-53B25E951A89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC53509D-3AA4-4126-8B69-53B25E951A89}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBA00A4F-3D23-4320-93BE-4F6D57CEFF0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBA00A4F-3D23-4320-93BE-4F6D57CEFF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBA00A4F-3D23-4320-93BE-4F6D57CEFF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBA00A4F-3D23-4320-93BE-4F6D57CEFF0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
