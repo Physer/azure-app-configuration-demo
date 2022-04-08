@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalAPIs", "src\MinimalA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "src\Library\Library.csproj", "{DBA00A4F-3D23-4320-93BE-4F6D57CEFF0E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureAppConfiguration", "AzureAppConfiguration", "{26BE5CC6-D675-4A56-9590-96B4982B5281}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureAppConfiguration", "src\AzureAppConfiguration\AzureAppConfiguration\AzureAppConfiguration.csproj", "{5321667D-1549-494B-8B16-8362BFB96F73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +37,16 @@ Global
 		{DBA00A4F-3D23-4320-93BE-4F6D57CEFF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBA00A4F-3D23-4320-93BE-4F6D57CEFF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBA00A4F-3D23-4320-93BE-4F6D57CEFF0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5321667D-1549-494B-8B16-8362BFB96F73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5321667D-1549-494B-8B16-8362BFB96F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5321667D-1549-494B-8B16-8362BFB96F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5321667D-1549-494B-8B16-8362BFB96F73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5321667D-1549-494B-8B16-8362BFB96F73} = {26BE5CC6-D675-4A56-9590-96B4982B5281}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {46CEEC05-5E69-413C-84DF-5EC963B2B62F}
