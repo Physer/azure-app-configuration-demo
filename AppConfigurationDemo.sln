@@ -3,17 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Functions", "src\Functions\Functions.csproj", "{7663E11B-E5DD-4484-B49B-56A8E2CBE7FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functions", "src\Functions\Functions.csproj", "{7663E11B-E5DD-4484-B49B-56A8E2CBE7FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "src\MVC\MVC.csproj", "{E564E77D-EF5B-4354-ABDE-349A1FB9153C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC", "src\MVC\MVC.csproj", "{E564E77D-EF5B-4354-ABDE-349A1FB9153C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalAPIs", "src\MinimalAPIs\MinimalAPIs.csproj", "{CC53509D-3AA4-4126-8B69-53B25E951A89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalAPIs", "src\MinimalAPIs\MinimalAPIs.csproj", "{CC53509D-3AA4-4126-8B69-53B25E951A89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "src\Library\Library.csproj", "{DBA00A4F-3D23-4320-93BE-4F6D57CEFF0E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureAppConfiguration", "AzureAppConfiguration", "{26BE5CC6-D675-4A56-9590-96B4982B5281}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureAppConfiguration", "src\AzureAppConfiguration\AzureAppConfiguration\AzureAppConfiguration.csproj", "{5321667D-1549-494B-8B16-8362BFB96F73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "src\Library\Library.csproj", "{DBA00A4F-3D23-4320-93BE-4F6D57CEFF0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,16 +33,9 @@ Global
 		{DBA00A4F-3D23-4320-93BE-4F6D57CEFF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBA00A4F-3D23-4320-93BE-4F6D57CEFF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBA00A4F-3D23-4320-93BE-4F6D57CEFF0E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5321667D-1549-494B-8B16-8362BFB96F73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5321667D-1549-494B-8B16-8362BFB96F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5321667D-1549-494B-8B16-8362BFB96F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5321667D-1549-494B-8B16-8362BFB96F73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{5321667D-1549-494B-8B16-8362BFB96F73} = {26BE5CC6-D675-4A56-9590-96B4982B5281}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {46CEEC05-5E69-413C-84DF-5EC963B2B62F}
