@@ -1,7 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+var connectionString = builder.Configuration.GetConnectionString("AppConfig");
+builder.Host
+    .ConfigureAppConfiguration(builder => builder.AddAzureAppConfiguration(connectionString))
+    .ConfigureServices(services => services.AddControllersWithViews());
 
 var app = builder.Build();
 
