@@ -1,11 +1,14 @@
 using Azure.Identity;
+using Microsoft.Extensions.Configuration.AzureAppConfiguration;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("AppConfig");
 builder.Host
-    .ConfigureAppConfiguration(builder => builder.AddAzureAppConfiguration(options =>
+    .ConfigureAppConfiguration((context, builder) => builder.AddAzureAppConfiguration(options =>
     {
         options.Connect(connectionString)
+        .Select(KeyFilter.Any, LabelFilter.Null)
+        .Select(KeyFilter.Any, context.HostingEnvironment.EnvironmentName)
         .ConfigureKeyVault(kvo => kvo.SetCredential(new DefaultAzureCredential(true)))
         .ConfigureRefresh(options => options.Register("Sentinel", true).SetCacheExpiration(TimeSpan.FromSeconds(3)));
     }))
