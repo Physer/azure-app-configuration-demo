@@ -5,9 +5,15 @@ var connectionString = builder.Configuration.GetConnectionString("AppConfig");
 builder.Host
     .ConfigureAppConfiguration(builder => builder.AddAzureAppConfiguration(options =>
     {
-        options.Connect(connectionString).ConfigureKeyVault(kvo => kvo.SetCredential(new DefaultAzureCredential(true)));
+        options.Connect(connectionString)
+        .ConfigureKeyVault(kvo => kvo.SetCredential(new DefaultAzureCredential(true)))
+        .ConfigureRefresh(options => options.Register("Sentinel", true).SetCacheExpiration(TimeSpan.FromSeconds(3)));
     }))
-    .ConfigureServices(services => services.AddControllersWithViews());
+    .ConfigureServices(services => 
+    {
+        services.AddAzureAppConfiguration();
+        services.AddControllersWithViews();
+    });
 
 var app = builder.Build();
 
@@ -18,6 +24,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.UseAzureAppConfiguration();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
