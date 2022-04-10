@@ -19,6 +19,7 @@ namespace MVC.Controllers
         public IActionResult Index()
         {
             ViewData["Name"] = _configuration["Demo:Home:Name"];
+            ViewData["Secret"] = _configuration["Demo:Home:Secret"];
             return View();
         }
 

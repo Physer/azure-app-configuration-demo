@@ -1,7 +1,12 @@
+using Azure.Identity;
+
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("AppConfig");
 builder.Host
-    .ConfigureAppConfiguration(builder => builder.AddAzureAppConfiguration(connectionString))
+    .ConfigureAppConfiguration(builder => builder.AddAzureAppConfiguration(options =>
+    {
+        options.Connect(connectionString).ConfigureKeyVault(kvo => kvo.SetCredential(new DefaultAzureCredential(true)));
+    }))
     .ConfigureServices(services => services.AddControllersWithViews());
 
 var app = builder.Build();
