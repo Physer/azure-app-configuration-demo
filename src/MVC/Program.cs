@@ -1,5 +1,6 @@
 using Azure.Identity;
 using Microsoft.Extensions.Configuration.AzureAppConfiguration;
+using Microsoft.FeatureManagement;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("AppConfig");
@@ -10,11 +11,13 @@ builder.Host
         .Select(KeyFilter.Any, LabelFilter.Null)
         .Select(KeyFilter.Any, context.HostingEnvironment.EnvironmentName)
         .ConfigureKeyVault(kvo => kvo.SetCredential(new DefaultAzureCredential(true)))
-        .ConfigureRefresh(options => options.Register("Sentinel", true).SetCacheExpiration(TimeSpan.FromSeconds(3)));
+        .ConfigureRefresh(options => options.Register("Sentinel", true).SetCacheExpiration(TimeSpan.FromSeconds(3)))
+        .UseFeatureFlags();
     }))
     .ConfigureServices(services => 
     {
         services.AddAzureAppConfiguration();
+        services.AddFeatureManagement();
         services.AddControllersWithViews();
     });
 
