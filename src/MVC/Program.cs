@@ -1,4 +1,5 @@
 using Azure.Identity;
+using Logic.Repositories;
 using Microsoft.Extensions.Configuration.AzureAppConfiguration;
 using Microsoft.FeatureManagement;
 
@@ -19,6 +20,8 @@ builder.Host
         services.AddAzureAppConfiguration();
         services.AddFeatureManagement();
         services.AddControllersWithViews();
+
+        services.AddTransient<IUserRepository, FakeUserRepository>();
     });
 
 var app = builder.Build();
