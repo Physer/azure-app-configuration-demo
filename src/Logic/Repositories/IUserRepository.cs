@@ -4,5 +4,5 @@ namespace Logic.Repositories;
 
 public interface IUserRepository
 {
-    IEnumerable<User> GetUsers();
+    Task<IEnumerable<User>> GetUsersAsync();
 }

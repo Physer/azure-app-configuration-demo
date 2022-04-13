@@ -11,5 +11,5 @@ public class UsersController : ControllerBase
     public UsersController(IUserRepository userRepository) => _userRepository = userRepository;
 
     [HttpGet("[controller]")]
-    public IActionResult GetUsers() => Ok(_userRepository.GetUsers());
+    public async Task<IActionResult> GetUsersAsync() => Ok(await _userRepository.GetUsersAsync());
 }
