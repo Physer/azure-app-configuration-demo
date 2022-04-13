@@ -13,7 +13,7 @@ builder.Host
         .Select(KeyFilter.Any, context.HostingEnvironment.EnvironmentName)
         .ConfigureKeyVault(kvo => kvo.SetCredential(new DefaultAzureCredential(true)))
         .ConfigureRefresh(options => options.Register("Sentinel", true).SetCacheExpiration(TimeSpan.FromSeconds(3)))
-        .UseFeatureFlags();
+        .UseFeatureFlags(options => options.CacheExpirationInterval = TimeSpan.FromSeconds(3));
     }))
     .ConfigureServices(services => 
     {
@@ -21,7 +21,7 @@ builder.Host
         services.AddFeatureManagement();
         services.AddControllersWithViews();
 
-        services.AddTransient<IUserRepository, FakeUserRepository>();
+        services.AddHttpClient<IUserRepository, UserRepository>(config => config.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/"));
     });
 
 var app = builder.Build();
