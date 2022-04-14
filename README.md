@@ -19,7 +19,11 @@ In order to run this in Azure, you'll need an active subscription.
     * Live refresh (Polling)
     * Environment-specific values
 * Feature management
-    * WIP 
+    * MVC support
+    * Dependency injection
+    * Conditional features
+    * Live refresh (Polling)
+    * Environment-specific values
 * Infrastructure-by-code via Bicep (WIP)
 ## Azure configuration
 WIP
