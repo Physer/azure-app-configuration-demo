@@ -2,6 +2,7 @@ using Azure.Identity;
 using Logic.Repositories;
 using Microsoft.Extensions.Configuration.AzureAppConfiguration;
 using Microsoft.FeatureManagement;
+using Microsoft.FeatureManagement.FeatureFilters;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("AppConfig");
@@ -23,7 +24,7 @@ builder.Host
     .ConfigureServices(services =>
     {
         services.AddAzureAppConfiguration();
-        services.AddFeatureManagement();
+        services.AddFeatureManagement().AddFeatureFilter<PercentageFilter>();
         services.AddControllersWithViews();
 
         services.AddHttpClient<IUserRepository, UserRepository>(config => config.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/"));
