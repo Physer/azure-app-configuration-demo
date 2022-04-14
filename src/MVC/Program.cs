@@ -13,9 +13,14 @@ builder.Host
         .Select(KeyFilter.Any, context.HostingEnvironment.EnvironmentName)
         .ConfigureKeyVault(kvo => kvo.SetCredential(new DefaultAzureCredential(true)))
         .ConfigureRefresh(options => options.Register("Sentinel", true).SetCacheExpiration(TimeSpan.FromSeconds(3)))
-        .UseFeatureFlags(options => options.CacheExpirationInterval = TimeSpan.FromSeconds(3));
+        .UseFeatureFlags(options =>
+        {
+            options.Select(KeyFilter.Any, LabelFilter.Null);
+            options.Select(KeyFilter.Any, context.HostingEnvironment.EnvironmentName);
+            options.CacheExpirationInterval = TimeSpan.FromSeconds(3);
+        });
     }))
-    .ConfigureServices(services => 
+    .ConfigureServices(services =>
     {
         services.AddAzureAppConfiguration();
         services.AddFeatureManagement();
